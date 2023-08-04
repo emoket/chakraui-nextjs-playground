@@ -24,19 +24,19 @@ export default function Details() {
       <SimpleGrid column={2} columnGap={3} rowGap={6} w='full'>
         <GridItem colSpan={1}>
           <FormControl>
-            <FormLabel>이름</FormLabel>
+            <FormLabel id='firstName'>이름</FormLabel>
             <Input placeholder='길동' />
           </FormControl>
         </GridItem>
         <GridItem colSpan={1}>
           <FormControl>
-            <FormLabel>성</FormLabel>
+            <FormLabel id='lastName'>성</FormLabel>
             <Input placeholder='홍' />
           </FormControl>
         </GridItem>
         <GridItem colSpan={1}>
           <FormControl>
-            <FormLabel>국가</FormLabel>
+            <FormLabel id='country'>국가</FormLabel>
             <Select>
               <option value='kr'>대한민국</option>
               <option value='us'>미국</option>
@@ -48,13 +48,13 @@ export default function Details() {
         </GridItem>
         <GridItem colSpan={1}>
           <FormControl>
-            <FormLabel>도시</FormLabel>
+            <FormLabel id='city'>도시</FormLabel>
             <Input placeholder='서울특별시' />
           </FormControl>
         </GridItem>
         <GridItem colSpan={2}>
           <FormControl>
-            <FormLabel>나머지 주소</FormLabel>
+            <FormLabel id='address'>나머지 주소</FormLabel>
             <Input placeholder='강남구 도곡동' />
           </FormControl>
         </GridItem>

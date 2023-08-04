@@ -3,10 +3,9 @@ import {
   VStack,
   Text,
   HStack,
-  AspectRatio,
-  Image,
   Stack,
   Divider,
+  useColorModeValue,
 } from '@chakra-ui/react';
 
 const formatCurrenty = (amount: number, locale: string, currency: string) =>
@@ -16,6 +15,9 @@ const formatCurrenty = (amount: number, locale: string, currency: string) =>
   }).format(amount);
 
 export default function Cart() {
+  const bgColor = useColorModeValue('gray.50', 'whiteAlpha.50');
+  const secondaryTextColor = useColorModeValue('gray.600', 'gray.400');
+
   return (
     <VStack
       w='full'
@@ -23,7 +25,7 @@ export default function Cart() {
       p={10}
       spacing={10}
       alignItems='flex-start'
-      // bg='gray.200'
+      bg={bgColor}
     >
       <VStack spacing={3} alignItems='flex-start'>
         <Heading size='2xl'>장바구니</Heading>
@@ -40,7 +42,7 @@ export default function Cart() {
         >
           <VStack w='full' spacing={0} alignItems='flex-start'>
             <Heading size='md'>토마토</Heading>
-            <Text color='gray.600'>SJ23D3746S</Text>
+            <Text color={secondaryTextColor}>SJ23D3746S</Text>
           </VStack>
           <Heading size='sm' textAlign='end'>
             {formatCurrenty(123456, 'ko-KR', 'KRW')}
@@ -49,20 +51,20 @@ export default function Cart() {
       </HStack>
       <VStack spacing={4} alignItems='stretch' w='full'>
         <HStack justifyContent='space-between'>
-          <Text color='gray.600'>상품 합계</Text>
+          <Text color={secondaryTextColor}>상품 합계</Text>
           <Heading size='sm'>{formatCurrenty(123456, 'ko-KR', 'KRW')}</Heading>
         </HStack>
         <HStack justifyContent='space-between'>
-          <Text color='gray.600'>배송료</Text>
+          <Text color={secondaryTextColor}>배송료</Text>
           <Heading size='sm'>{formatCurrenty(3000, 'ko-KR', 'KRW')}</Heading>
         </HStack>
         <HStack justifyContent='space-between'>
-          <Text color='gray.600'>부가세</Text>
+          <Text color={secondaryTextColor}>부가세</Text>
           <Heading size='sm'>{formatCurrenty(1234, 'ko-KR', 'KRW')}</Heading>
         </HStack>
         <Divider />
         <HStack justifyContent='space-between'>
-          <Text color='gray.600'>총 합계</Text>
+          <Text color={secondaryTextColor}>총 합계</Text>
           <Heading size='lg'>{formatCurrenty(1234, 'ko-KR', 'KRW')}</Heading>
         </HStack>
       </VStack>
