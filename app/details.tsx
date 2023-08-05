@@ -64,7 +64,7 @@ export default function Details() {
           <Checkbox defaultChecked>나중에 작성할게요</Checkbox>
         </GridItem>
         <GridItem colSpan={2}>
-          <Button size='lg' w='full'>
+          <Button variant='primary' size='lg' w='full'>
             주문하기
           </Button>
         </GridItem>
